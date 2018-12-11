@@ -17,6 +17,8 @@ func Unpack(a *any.Any, eout *error) proto.Message {
 			panic(err)
 		}
 		return nil
+	} else if eout != nil {
+		*eout = nil
 	}
 	return da.Message
 }
